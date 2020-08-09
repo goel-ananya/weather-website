@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 //console.log(path.join(__dirname,'/../'))
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicpath = path.join(__dirname,'../public')
 const viewspath = path.join(__dirname,'../templates/views')
@@ -74,6 +75,6 @@ app.get('*', (req, res) => {
     res.send('No page found')
 })
 
-app.listen(3000, () => {
-    console.log('Server started')
+app.listen(port, () => {
+    console.log('Server started' + port)
 })
